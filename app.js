@@ -58,18 +58,17 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(() => {
     // turn on the pills for the current number
     const pillsToTurnOn = numberToPillsMap[currentNumber];
+    const pillsToTurnOff = Object.keys(pillMap).filter(
+      (pillPosition) => !pillsToTurnOn.includes(pillPosition)
+    );
     pillsToTurnOn.forEach((pillPosition) => {
       const pill = pillMap[pillPosition];
       pill.style.opacity = 1; // turn on the pill
     });
-
-    // after a short delay, turn off the pills before moving to the next number
-    setTimeout(() => {
-      pillsToTurnOn.forEach((pillPosition) => {
-        const pill = pillMap[pillPosition];
-        pill.style.opacity = 0.1; // turn off the pill
-      });
+    pillsToTurnOff.forEach((pillPosition) => {
+      const pill = pillMap[pillPosition];
+      pill.style.opacity = 0.2; // turn off the pill
+    });
       currentNumber = (currentNumber + 1) % 10; // move to the next number, looping back to 0 after 9
     }, 500); // keep the number displayed for 500 milliseconds before turning off the pills
   }, 1000); // change the number every 1 second
-});
