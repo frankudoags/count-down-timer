@@ -67,9 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       pillsToTurnOn.forEach((pillPosition) => {
         const pill = pillMap[pillPosition];
-        pill.style.opacity = 0.2; // turn off the pill
+        pill.style.opacity = 0.1; // turn off the pill
       });
       currentNumber = (currentNumber + 1) % 10; // move to the next number, looping back to 0 after 9
-    }, 1000); // keep the number displayed for 1 second
-  }, 2000); // change the number every 2 seconds
+    }, 500); // keep the number displayed for 500 milliseconds before turning off the pills
+  }, 1000); // change the number every 1 second
 });
