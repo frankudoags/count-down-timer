@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <section class="p-4 min-h-screen flex flex-col items-center justify-center">
+      <div id="root">
+        <!-- 7 pills that will act as countdown indicators -->
+        <!-- 
+        Each pill will represent a number from 9 to 0, and as the timer counts down, the pills will change color or disappear to indicate the remaining time.
+        use tailwind for styling
+         -->
+        <div class="relative">
+          <!-- horizontal pills -->
+          <span
+            data-pill="h-top"
+            class="absolute -top-22 rounded-3xl w-20 h-4 bg-gray-300 opacity-50 transition-all duration-300 ease-in-out"
+          ></span>
+          <span
+            data-pill="h-middle"
+            class="absolute rounded-3xl w-20 h-4 bg-gray-300 opacity-50 transition-all duration-300 ease-in-out"
+          ></span>
+          <span
+            data-pill="h-bottom"
+            class="absolute top-22 rounded-3xl w-20 h-4 bg-gray-300 opacity-50 transition-all duration-300 ease-in-out"
+          ></span>
+
+          <span
+            data-pill="v-top-left"
+            class="absolute rounded-3xl w-20 h-4 bg-gray-300 opacity-50 transition-all duration-300 ease-in-out rotate-90 -top-11 -left-12"
+          ></span>
+          <span
+            data-pill="v-top-right"
+            class="absolute rounded-3xl w-20 h-4 bg-gray-300 opacity-50 transition-all duration-300 ease-in-out rotate-90 -top-11 -right-32"
+          ></span>
+          <span
+            data-pill="v-bottom-left"
+            class="absolute rounded-3xl w-20 h-4 bg-gray-300 opacity-50 transition-all duration-300 ease-in-out rotate-90 top-11 -left-12"
+          ></span>
+          <span
+            data-pill="v-bottom-right"
+            class="absolute rounded-3xl w-20 h-4 bg-gray-300 opacity-50 transition-all duration-300 ease-in-out rotate-90 top-11 -right-32"
+          ></span>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="./app.js"></script>
+</html>
+
+/** --- | | --- | | --- */
